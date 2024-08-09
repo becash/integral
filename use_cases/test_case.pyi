@@ -3,6 +3,7 @@ import typing
 
 import pydantic
 import domain.test_case
+import use_cases
 
 
 class TestCase(pydantic.BaseModel):
@@ -16,23 +17,11 @@ class TestCase(pydantic.BaseModel):
     response_json: typing.Optional[dict]
 
     @staticmethod
-    def load_from_file(path: str) -> "TestCase":
-        # load json from file
-        with open(path, "r") as file:
-            json_data = json.loads(file.read())
-        return TestCase(**json_data)
+    def load_from_file(path: str) -> "TestCase":...
 
-    def save_to_file(self, path: str) -> None:
-        with open(path, "w") as file:
-            json.dump(self.model_dump(), file, sort_keys=True, indent=4, separators=(",", ": "))
+    def save_to_file(self, path: str) -> None:...
 
-    def run(self, iterator):
-        if self.settings.type == domain.test_case.TestType.rest:
-            print(f"UNINMPLEMENTED Running REST test case: {self.name}")
-        elif self.settings.type == domain.test_case.TestType.graphql:
-            print(f"UNINMPLEMENTED Running GraphQL test case: {self.name}")
-        elif self.settings.type == domain.test_case.TestType.grpc:
-            iterator.grpc_client
+    def run(self, iterator: use_cases.TestRunner):...
 
 
 class TestCaseDefaults(TestCase):

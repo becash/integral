@@ -9,6 +9,7 @@ import use_cases
 class TestRunner:
     root_dir = None
     tests = []
+    grpc_client = None
 
     def run_tests(self, test_dir: str):
         self.discover(test_dir)

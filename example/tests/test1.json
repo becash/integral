@@ -1,0 +1,12 @@
+{
+    "depends_on": [],
+    "name": "Test Case",
+    "query_arguments": {},
+    "query_meta": [],
+    "response_json": null,
+    "response_meta": [],
+    "response_string": null,
+    "settings": {
+        "type": "rest"
+    }
+}
