@@ -9,5 +9,5 @@ To do:
   - graphql
 - test dependencies scheme
 - "generate" tests :  mean , yoy wrote query application save or update responce  for future usages
-
-  
+- service test coverage
+- variables between tests
